@@ -79,14 +79,12 @@ Bella CMS use the same concept
 
 ![](filesystem_layout2.png)
 
+Files can be easily organised in directories (folders).
+All the content is saved under `/src/content/` folder.
+Would be necessary to create a file with extension `.satao` and then call the URL with the specific path.
+On our example by calling the URL `https://satao.page/docs/` the CMS will try to load the file `index.satao`, then render it on HTML.
 
+#### Different content processor
+Bella CMS is quite flexible because is up to the user to decide what content processor use.
+For example by adding the library Parsedown which is one of the most popular markdown libraries for PHP, the user can write all the content with Markdown.
 
-
-
-## The satao.page website
-
-The website satao.page is a website that embrace the concept of write HTML documentation easily.
-
-
-
-### What is Bella
