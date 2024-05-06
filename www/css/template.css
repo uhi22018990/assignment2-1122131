@@ -1,0 +1,351 @@
+:root {
+  --color-1: #DFF6FF;
+  --color-2: #47B5FF;
+  --color-3: #256D85;
+  --color-4: #06283D;
+}
+
+@font-face {
+  font-family: "sans-regular";
+  src: url("/fonts/Noto_Sans/NotoSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "sans-bold";
+  src: url("/fonts/Noto_Sans/NotoSans-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "mono-regular";
+  src: url("/fonts/Noto_Sans_Mono/static/NotoSansMono/NotoSansMono-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "mono-bold";
+  src: url("/fonts/Noto_Sans_Mono/static/NotoSansMono/NotoSansMono-Bold.ttf") format("truetype");
+}
+
+/* serif, sans-serif, monospace, cursive and fantasy */
+body {
+  margin:0;
+  font-family: 'sans-regular', sans;
+  font-size: 16px;
+  line-height: 1.5
+}
+
+pre {
+  word-wrap: normal;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+
+.docs-sidebar,
+.docs-navigator,
+.docs-content {
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-width: 0px;
+}
+
+code, kbd, samp {
+  font-family: 'mono-regular', monospace;
+  /*white-space: pre-wrap*/
+}
+code b, kbd b, samp b {
+  font-family: 'mono-bold', monospace;
+}
+
+b, strong {
+  font-family: "sans-bold";
+}
+
+dt {
+  margin: 1rem auto;
+  font-family: 'sans-bold';
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-3);
+}
+
+a,
+a:visited,
+a:focus {
+  color: var(--color-3);
+}
+
+#page-header,
+#page-main,
+#page-footer {
+  margin: 0;
+}
+
+#page-header {
+  padding: 0 1rem;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  border-bottom: 2px solid var(--color-4);
+}
+
+
+#page-main {
+  /*min-height: 100%;*/
+}
+
+#page-header-container {
+  align-items: center
+}
+
+#site-logo {
+  max-height: 60px;
+  vertical-align:middle;
+}
+
+#page-footer {
+  padding-top: 2rem;
+  border-top: 2px solid #000;
+  background-color: var(--color-1);
+  color: var(--color-4);
+}
+
+.menu-icon {
+  color: #000;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  position: absolute;
+  padding: 0;
+  right:0;
+}
+.menu-icon a {
+  text-decoration: none;
+  display: none;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: initial;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  display: inline-block;
+  flex: 0 1 auto;
+  color: var(--color-4);
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.main-nav a:hover {
+  background: var(--color-1);
+  color: var(--color-4);
+}
+
+
+.main-nav {
+  display: none;
+}
+.main-nav.expand {
+  display: block;
+}
+
+.main-nav.expand a {
+  text-align: left;
+  display: block;
+  flex: 1 1 100%;
+}
+
+.footer-copyright {
+  text-align: left;
+}
+
+
+#section-hero {
+  height: 600px;
+  background: #031119 url(/images/hero-mobile.jpg) no-repeat center top;
+  background-size: cover;
+}
+
+#hero-2nd {
+  background-color: var(--color-4);
+  text-align: center;
+}
+#hero-2nd h2 {
+  color: var(--color-1);
+  color: white;
+}
+
+#section-hero-credits {
+  background: var(--color-1);
+  font-size: .8rem;
+  text-align: right;
+  border-top: 1px solid var(--color-3);
+  border-bottom: 1px solid var(--color-3);
+}
+
+.highlights {
+  text-align: center;
+}
+.highlights header {
+  color: var(--color-3);
+}
+
+.highlights img {
+  max-width: 200px;
+}
+.gut > div {
+  padding: 0 1.5rem;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+#tsavo-logo {
+  width: 100%;
+  max-width: 220px;
+}
+#swt-logo {
+  width: 100%;
+  max-width: 180px;
+}
+
+
+#section-hero .slogan {
+  display: block;
+  background: var(--color-3);
+  color: var(--color-1);
+  margin-top: 3rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.donate-link {
+  padding: 1rem 2rem;
+  color: var(--color-4);
+  background: var(--color-2);
+  border-radius: 1rem;
+  text-decoration: none;
+}
+
+#page-sidebar {
+  /*text-align: justify;*/
+  background: var(--color-1);
+  padding-bottom: 1rem;
+}
+
+#banner {
+  background: var(--color-1);
+}
+#highlights-box {
+  background: var(--color-1);
+}
+.donate-box {
+  margin-top: 5rem;
+  border-top: 1px solid var(--color-2);
+}
+.donate-link-box {
+  padding-top: .7rem;
+  text-align: center;
+}
+.donate-logo-img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.docs-navigator,
+.docs-content {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.code-container {
+  max-width: 100%;
+}
+
+.docs-container {
+  flex-wrap: wrap;
+}
+
+.docs-navigator {
+  background-color: var(--color-4);
+  flex-wrap: nowrap;
+}
+
+.docs-navigator ul,
+.docs-navigator li {
+  margin: 0;
+  padding: 0;
+}
+.docs-navigator li{
+  list-style: none;
+}
+.docs-navigator li ul li {
+}
+
+.docs-navigator a {
+  padding: .5rem 0;
+  color: var(--color-1);
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid var(--color-3);
+}
+.docs-navigator a:hover {
+  text-decoration: underline;
+}
+
+.docs-navigator .spacer {
+  margin-left: 1rem;
+}
+
+.docs-navigator .spacer2 {
+  margin-left: 2rem;
+}
+
+@media only screen and (min-width: 80em) { /* min-width 1280px, large screens */
+  #page-header {
+    position: sticky;
+  }
+  a.menu-icon {
+    display: none;
+  }
+
+  .main-nav {
+    flex-wrap: nowrap;
+    display: block;
+  }
+  .main-nav.expand a {
+    text-align: left;
+    display: inline-block;
+    flex: 0 1 auto;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+  #page-sidebar {
+    border-left: 2px solid var(--color-2);
+  }
+
+  #section-hero {
+    height: 500px;
+    background: #031119 url(/images/hero.jpg) no-repeat center top;
+    background-size: cover;
+  }
+
+  #section-hero .slogan {
+    margin-top: 0;
+  }
+
+  .docs-container {
+    flex-wrap: nowrap;
+  }
+  .docs-content {
+    /*width: 600px;*/
+  }
+}

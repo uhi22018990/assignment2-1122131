@@ -1,0 +1,204 @@
+/* =============================================================================
+/* Naranza Toco v2023.1 - (c) Andrea Davanzo - License MPL v2.0 - toco.page
+ * ========================================================================== */
+
+*, *:before, *:after { box-sizing: border-box; }
+
+.toco-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.toco-img-fluid {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.toco-break { flex-basis: 100%; width: 0px; height: 0; overflow: hidden;}
+
+/* flex containers */
+.toco-colr,
+.toco-col,
+.toco-rowr,
+.toco-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.toco-nw {
+  flex-wrap: nowrap;
+}
+.toco-colr { flex-direction: column-reverse; }
+.toco-col { flex-direction: column; }
+.toco-rowr { flex-direction: row-reverse; }
+.toco-row { flex-direction: row; }
+
+/* flex items */
+.toco-auto,
+.toco-1,
+.toco-1-2,
+.toco-2-2,
+.toco-1-3,
+.toco-2-3,
+.toco-3-3,
+.toco-1-4,
+.toco-2-4,
+.toco-3-4,
+.toco-4-4,
+.toco-1-12,
+.toco-2-12,
+.toco-3-12,
+.toco-4-12,
+.toco-5-12,
+.toco-6-12,
+.toco-7-12,
+.toco-8-12,
+.toco-9-12,
+.toco-10-12,
+.toco-11-12,
+.toco-12-12,
+.toco-1-24,
+.toco-2-24,
+.toco-3-24,
+.toco-4-24,
+.toco-5-24,
+.toco-6-24,
+.toco-7-24,
+.toco-8-24,
+.toco-9-24,
+.toco-10-24,
+.toco-11-24,
+.toco-12-24,
+.toco-13-24,
+.toco-14-24,
+.toco-15-24,
+.toco-16-24,
+.toco-17-24,
+.toco-18-24,
+.toco-19-24,
+.toco-20-24,
+.toco-21-24,
+.toco-22-24,
+.toco-23-24,
+.toco-24-24 {
+  flex: 1 1 100%;
+}
+
+.toco-sm-auto { flex: 1 1 100%; }
+.toco-sm-1-4 { flex: 1 1 25%; }
+.toco-sm-1-2, .toco-sm-2-4 { flex: 1 1 50%; }
+.toco-sm-1-3 { flex: 1 1 33.3333%; }
+.toco-sm-2-3 { flex: 1 1 66.6667%; }
+.toco-sm-3-4 { flex: 1 1 75%; }
+
+.toco-w-1 { width: 100%; max-width: 100%; }
+.toco-w-1-4 { width: 25%; max-width: 25%; }
+.toco-w-1-3 { width: 33.3333%; max-width: 33.3333%; }
+.toco-w-1-2 { width: 50%; max-width: 50%; }
+.toco-w-2-4 { width: 50%; max-width: 50%; }
+.toco-w-2-3 { width: 66.6667%; max-width: 66.6667%; }
+.toco-w-3-4 { width: 75%; max-width: 75%; }
+.toco-w-1-24 { width: 4.1667%; max-width: 4.1667%; }
+.toco-w-2-24 { width: 8.3333%; max-width: 8.3333%; }
+.toco-w-3-24 { width: 12.5%; max-width: 12.5%; }
+.toco-w-4-24 { width: 16.6667%; max-width: 16.6667%; }
+.toco-w-5-24 { width: 20.8333%; max-width: 20.8333%; }
+.toco-w-6-24 { width: 25%; max-width: 25%; }
+.toco-w-7-24 { width: 29.1667%; max-width: 29.1667%; }
+.toco-w-8-24 { width: 33.3333%; max-width: 33.3333%; }
+.toco-w-9-24 { width: 37.5%; max-width: 37.5000%; }
+.toco-w-10-24 { width: 41.6667%; max-width: 41.6667%; }
+.toco-w-11-24 { width: 45.8333%; max-width: 45.8333%; }
+.toco-w-12-24 { width: 50%; max-width: 50%; }
+.toco-w-13-24 { width: 54.1667%; max-width: 54.1667%; }
+.toco-w-14-24 { width: 58.3333%; max-width: 58.3333%; }
+.toco-w-15-24 { width: 62.5%; max-width: 62.5%; }
+.toco-w-16-24 { width: 66.6667%; max-width: 66.6667%; }
+.toco-w-17-24 { width: 70.8333%; max-width: 70.8333%; }
+.toco-w-18-24 { width: 75%; max-width: 75%; }
+.toco-w-19-24 { width: 79.1667%; max-width: 79.1667%; }
+.toco-w-20-24 { width: 83.3333%; max-width: 83.3333%; }
+.toco-w-21-24 { width: 87.5%; max-width: 87.5000%; }
+.toco-w-22-24 { width: 91.6667%; max-width: 91.6667%; }
+.toco-w-23-24 { width: 95.8333%; max-width: 95.8333%; }
+.toco-w-2-2, .toco-w-3-3, .toco-w-4-4, .toco-w-24-24 { flex: 1 1 100%; }
+
+.toco-none { flex: 0 0 auto; }
+.toco-initial { flex: 0 1 auto; }
+.toco-auto { flex: 1 1 auto; }
+
+.toco-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 80em) { /* min-width 1280px, large screens */
+  .toco-colr,
+  .toco-col,
+  .toco-rowr,
+  .toco-row {
+    /*flex-wrap: wrap;*/
+  }
+  .toco-auto { flex: 1 1 auto; }
+  .toco-1-24 { flex: 1 1 4.1667%; }
+  .toco-1-12, .toco-2-24 { flex: 1 1 8.3333%; }
+  .toco-3-24 { flex: 1 1 12.5%; }
+  .toco-2-12, .toco-4-24 { flex: 1 1 16.6667%; }
+  .toco-5-24 { flex: 1 1 20.8333%; }
+  .toco-1-4, .toco-3-12, .toco-6-24 { flex: 1 1 25%; }
+  .toco-7-24 { flex: 1 1 29.1667%; }
+  .toco-1-3, .toco-4-12, .toco-8-24 { flex: 1 1 33.3333%; }
+  .toco-9-24 { flex: 1 1 37.5000%; }
+  .toco-5-12, .toco-10-24 { flex: 1 1 41.6667%; }
+  .toco-11-24 { flex: 1 1 45.8333%; }
+  .toco-1-2, .toco-2-4, .toco-6-12, .toco-12-24 { flex: 1 1 50%; }
+  .toco-13-24 { flex: 1 1 54.1667%; }
+  .toco-7-12, .toco-14-24 { flex: 1 1 58.3333%; }
+  .toco-15-24 { flex: 1 1 62.5%; }
+  .toco-2-3, .toco-8-12, .toco-16-24 { flex: 1 1 66.6667%; }
+  .toco-17-24 { flex: 1 1 70.8333%; }
+  .toco-3-4, .toco-9-12, .toco-18-24 { flex: 1 1 75%; }
+  .toco-19-24 { flex: 1 1 79.1667%; }
+  .toco-10-12, .toco-20-24 { flex: 1 1 83.3333%; }
+  .toco-21-24 { flex: 1 1 87.5%; }
+  .toco-11-12, .toco-22-24 { flex: 1 1 91.6667%; }
+  .toco-23-24 { flex: 1 1 95.8333%; }
+  .toco-1, .toco-2-2, .toco-3-3, .toco-4-4, .toco-12-12, .toco-24-24 { flex: 1 1 100%; }
+}
+
+.toco-container {
+  width: 100vw;
+  max-width: 100vw;
+}
+
+@media only screen and (min-width: 80em) { /* min-width 1280px, large screens */
+  body {
+    font-size: 1.1rem;
+  }
+  .toco-container {
+    width: 1140px;
+    max-width: 1140px;
+  }
+}
+
+@media only screen and (min-width: 90em) { /* min-width 1440px, xlarge screens */
+  body {
+    font-size: 1.2rem;
+  }
+  .toco-container {
+    width: 1320px;
+    max-width: 1320px;
+  }
+}
+
+@media only screen and (min-width: 120em) { /* min-width 1920px, xxlarge screens */
+  body {
+    font-size: 1.35rem;
+  }
+  .toco-container {
+    width: 1920px;
+    max-width: 1920px;
+  }
+}

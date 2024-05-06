@@ -1,0 +1,7 @@
+<div class="tank-function-autoindex-list">
+  <ul class="tank-function-autoindex">
+    <?php foreach ($toc as $data): ?>
+      <li><a href="<?= $data->url ?>"><?= $data->headline ?></a> &mdash; <?= $data->abstract ?></li>
+    <?php endforeach ?>
+  </ul>
+</div>

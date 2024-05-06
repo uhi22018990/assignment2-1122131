@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <!--<title><?= $data['head_title']; ?></title>-->
+  <title>Andrea Davanzo</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/toco-core.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <!--<link rel="stylesheet" href="/css/toco-grid.css">-->
+  <!--  <link rel="stylesheet" href="/css/dff.css">
+    <link rel="stylesheet" href="/css/dff-home.css?v2">
+    <link rel="stylesheet" href="/css/dff-menu.css">
+    <link rel="stylesheet" href="/css/dff-form.css">
+    <link rel="stylesheet" href="/css/dff-game.css">
+    <link rel="stylesheet" href="/css/dff-alert.css">
+    <link rel="stylesheet" href="/css/asciidoc.css">-->
+  <script src="/js/jquery-3.6.1.min.js" ></script>
+</head>
+<body>
+  <div id="site-wrapper">
+    <div class="toco-col">
+      <header id="page-header" class="toco-1">
+        <nav id="topnav" class="navbar">
+         <a href="javascript:void(0);" class="icon" onclick="myFunction()">Menu</a>
+          <a href="/">Home</a>
+          <a href="about-me">Who I am</a>
+          <a href="/article/index">Articles</a>
+          <a href="/projects/index">Projects</a>
+        </nav>
+      </header>
+      <main id="page-main-container" class="toco-1">
+        <h1>Fixed Top Menu</h1>
+        <h2>Scroll this page to see the effect</h2>
+        <h2>The navigation bar will stay at the top of the page while scrolling</h2>
+
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+      </main>
+      <footer id="page-footer">
+        this is the footer
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function open_nav() {
+////        document.getElementById("mySidebar").style.width = "100%";
+//         document.getElementById("#t_main_menu").css("height", "100%");
+//        document.getElementById("main").style.marginLeft = "0";
+      }
+
+      function close_nav() {
+        $("#t_main_menu").css("height", "0");
+      }
+    function narnaza_toggle_menu() {
+      $("#site-menu").toggle();
+    }
+    function openNav() {
+
+      document.getElementById("site-menu").style.display = "block";
+    }
+
+    /* Close/hide the sidenav */
+    function closeNav() {
+      document.getElementById("site-menu").style.display = "none";
+    }
+    $(function () {
+      $(window).on('resize', function (e) {
+        var x = $(this).width();
+        y = $(this).height();
+        z = x / y;
+        if (x > 1280 && $("#site-menu").is(':hidden')) {
+          $("#site-menu").toggle();
+        } else if (x < 1280 && $("#site-menu").is(':visible')) {
+          $("#site-menu").toggle();
+        }
+        console.log(x);
+        console.log(y);
+      });
+    });
+  </script>
+
+  <script>
+function myFunction() {
+  var topnav = document.getElementById("topnav");
+  if (topnav.className === "navbar") {
+    topnav.className += " expand";
+  } else {
+    topnav.className = "navbar";
+  }
+}
+</script>
+</body>
+</html>

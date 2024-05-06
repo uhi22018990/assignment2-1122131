@@ -1,0 +1,273 @@
+.h1 Documentation<
+
+.p
+Satao is a document format for publishing HTML documents.
+Based and inspired by HTML, it reuses the its elements trying to reduce the syntax verbosity.
+
+.h2 Introduction<
+.p HTML elements are delineated by tags, written using angle brackets.
+Tags can introduce content into the page or provide information about document text.
+The HTML specification has seen several updates since its first release 2 in 1995.<
+
+.pre{class=code-container}
+.code{class="language-html"}
+&<p>
+&  This is a sentence inside a paragraph.
+&  This is another sentence inside a paragraph.
+&</p>
+&
+&<ul>
+&  <li>this is an item</li>
+&  <li>this is another item</li>
+&  <li>another one
+&    <ul>
+&      <li>this is a text</li>
+&      <li>this is another text</li>
+&    </ul>
+&  </li>
+&</ul>
+<<
+
+.p
+From the above example there is a good dose of verbosity.
+Nothing wrong with it and there are very good reasons for this verbosity.
+However, this verbosity could be a bit annoying while writing a document or an article for the web.
+A lot of alternative markup languages has been invented trying to reduce the HTML verbosity.
+Some examples are Markup, Asciidoc or reStructuredText etc..
+However, these markup languages have their own syntax and rules.
+For example, on Markdown a heading 2 is prefixed by a double hash (##).
+Instead, a text in bold is included between two asterisks, like **bold text**.
+<
+
+.p
+Satao adopted a different approach.
+It reuses the same tags defined by HTML but shortening its syntax.
+So, our example can be rewritten in Satao as:
+
+.pre
+.code{class="language-text"}
+\.p
+\  This is a sentence inside a paragraph.
+\  This is another sentence inside a paragraph.&lt;
+\
+\.ul
+\  .li this is an item&lt;
+\  .li this is another item&lt;
+\  .li
+\    .ol
+\      .li this is a text&lt;
+\      .li this is another text&lt;
+<<
+
+.p
+Moreover, Satao supports element attributes like HTML and it adopts the same HTML syntax.
+For example, this HTML code:
+
+.pre
+.code{class="language-html"}
+&<figure>
+&  <img src="/images/satao.jpg" alt="The elephant Satao">
+&  <figcaption>The elephant Satao</figcaption>
+&</figure>
+<<
+
+.p in Satao can be written as<
+
+.pre
+.code{class="language-text"}
+\.figure&lt;
+\.img{src="/images/satao.jpg" alt="The elephant Satao"}
+\.figcaption The elephant Satao&lt;
+<<
+
+.p
+To simplify, you can reuse all the HTML tags to identity bold or italic or divs.
+If you don't need to specify attributes you can code you paragraph with a simple .code &period;p< followed by a whitespace,
+  and close it with the .code &lt;< (less than) symbol.<
+
+.pre
+.code{class="language-text"}.p
+\This is a sentence inside a paragraph.
+\This is another sentence inside a paragraph.&lt;
+<<
+
+.h2 Macro<
+
+.p
+Satao comes with macro.
+Macro are pieces of html code that will be replaced during the encoding.
+They start with the number symbol (#) followed by the macro name.
+There are four pre-defined macros:<
+
+.ul
+  .li &num;satao-info<
+  .li &num;satao-success<
+  .li &num;satao-warning<
+  .li &num;satao-danger<
+<
+
+.p Example:
+
+.pre
+.code{class="language-text"}#satao-info
+This is a line in a paragraph.
+This is another line in a paragraph.
+This is another line in a paragraph.&lt;
+<<
+
+.p will be converted as<
+
+.pre
+.code{class="language-html"}
+&<div class="satao-info">
+&This is a line in a paragraph.
+&This is another line in a paragraph.
+&This is another line in a paragraph.
+&</div>
+<<
+
+.h2 Escape<
+.p
+With Satao a whole line can be escaped which means that the whole line will not be processed.
+Example, for publish this:<
+
+.pre
+.code{class="language-text"}
+\.figure&lt;
+\.img{src="/images/satao.jpg" alt="The elephant Satao"}
+\.figcaption The elephant Satao&lt;
+<<
+
+.p all the lines must be prefixed with a reverse solidus symbol (\)<
+
+.pre
+.code{class="language-text"}
+\\.figure&lt;
+\\.img{src="/images/satao.jpg" alt="The elephant Satao"}
+\\.figcaption The elephant Satao&lt;
+<<
+
+
+.h2 Encoding<
+.p
+Similar to Escape, Satao can encode each character on a line by its HTML entities.
+Example, for publish this:<
+
+.pre
+.code{class="language-html"}
+&<figure>
+&  <img src="/images/satao.jpg" alt="The elephant Satao">
+&  <figcaption>The elephant Satao</figcaption>
+&</figure>
+<<
+
+.p all the lines must be prefixed with a ampersand symbol (&)<
+.pre
+.code{class="language-text"}
+&&<figure>
+&&  <img src="/images/satao.jpg" alt="The elephant Satao">
+&&  <figcaption>The elephant Satao</figcaption>
+&&</figure>
+<<
+
+
+.h2 Formal definition<
+
+.h3 Start tag<
+.p Start tags must have the following format:<
+.ol
+  .li The first character of a start tag must be a U+002E FULL STOP character (.).<
+  .li The next few characters of a start tag must be the HTML element's tag name.<
+  .li
+    Any attributes must be contained between U+007B LEFT CURLY BRACKET character ({) and U+007D RIGHT CURLY BRACKET character (}).
+    Attributes syntax follow the standard .a{href=https://html.spec.whatwg.org/#attributes-2}HTML Attributes syntax<<
+  .li Finally, start tags must be closed by a U+0020 SPACE character ( ) or U+000A LINE FEED character (LF)<
+
+.h3 End tags<
+.p End tags must be a U+003C LESS-THAN SIGN character (&lt;).<
+
+.h3 Escape line<
+.p
+Content inside an escape line is ignored by the parser.
+Escape line MUST have the following format:<
+
+.ol
+  .li The first character of a start tag must be a U+005C REVERSE SOLIDUS character (\).<
+  .li Finally, escaped line MUST be closed by a U+000A LINE FEED character (LF)<
+
+
+
+
+
+.p
+If you know how to write HTML pages, you know Satao.
+It is based on HTML so you can virtually even write and entire website with it.
+Satao is based on the concept of start tags and end tags.<
+
+
+As you can understand the Satao process the text by lines
+
+Don't worry too much if some points are not clear. We are going to explain them all with some practical example.
+Examples
+Heading with some paragraphs
+
+
+.h1 This is my heading
+
+.p
+This the first line of the paragraph.
+This is the second line of the paragraph
+This is the third line of the paragraph
+
+.p
+This the first line of the new paragraph.
+This is the second line of the new paragraph
+This is the third line of the new paragraph
+
+As you see after the tag .h1 there is a space and then the text of my heading. The blank after the .h1 will close it. We have then added two paragraphs (.p). When you write a paragraph, write one sentence per line. This will help you to visualize your text but also tu understand how long is your sentence.
+
+The HTML rendered will be
+
+
+<h1>This is my heading
+</h1>
+<p>
+This the first line of the paragraph.
+This is the second line of the paragraph
+This is the third line of the paragraph
+</p>
+<p>
+This the first line of the new paragraph.
+This is the second line of the new paragraph
+This is the third line of the new paragraph
+</p>
+
+Simple isn't it? Excellent, let us now complicate the things
+HTML tag attributes
+
+Remember to add a blank line after .figcaption in order to close all the open tags.
+Tag, content a force closing
+
+One complicated case is when you want to create unordered or ordered lists. Because Satao is line based, you could have the case the the items are shorts. To enforce Satao to close the tag, you can use < symbol at the end of the line.
+
+
+.ul
+  .li this is an item<
+  .li this is another item<
+  .li
+    .ol
+      .li this is a text<
+      .li this is another text<
+
+Will be converted as
+
+
+<ul>
+<li>this is an item</li>
+<li>this is another item</li>
+<li>another one
+<ul>
+<li>this is a text</li>
+<li>this is another text</li>
+</ul></li></ul>
+

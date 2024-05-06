@@ -1,0 +1,277 @@
+:root {
+  --color-1: #F9E4D4;
+  --color-2: #D67D3E;
+  --color-3: #9C0F48;
+  --color-4: #470D21;
+  --page-header-bg: #2D383C;
+  --page-header-fg: #7da1c4;
+  --main-nav-hover-bg: #7da1c4;
+  --main-nav-hover-fg: #000000;
+}
+
+@font-face {
+  font-family: "roboto-regular";
+  src: url("/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "roboto-bold";
+  src: url("/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+
+body {
+  margin:0;
+  font-family: 'roboto-regular', monospace;
+  font-size: 16px;
+}
+
+#page-header,
+#page-main,
+#page-footer {
+  /*border: 1px solid red;*/
+  margin: 0;
+}
+
+#page-header {
+  padding: 0 1rem;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  border-bottom: 2px solid var(--color-4);
+}
+
+
+#page-main {
+  min-height: 100%;
+}
+
+
+#page-header-container {
+  /*border: 1px solid red;*/
+  align-items: center
+
+}
+#site-logo {
+  max-height: 60px;
+  vertical-align:middle;
+}
+
+#page-footer {
+  padding-top: 2rem;
+  border-top: 2px solid #000;
+  background-color: var(--color-1);
+  color: var(--color-4);
+}
+
+.menu-icon {
+  color: #000;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  position: absolute;
+  padding: 0;
+  right:0;
+}
+.menu-icon a {
+  text-decoration: none;
+  display: none;
+}
+
+.hamburger-bars {
+  margin: 0;
+  padding: 0;
+}
+.hamburger-bars > div {
+  width: 35px;
+  height: 5px;
+  background-color: var(--color-4);
+  margin: 6px 0;
+}
+.hamburger-bars div:first-child {
+  margin-top: 0;
+}
+.hamburger-bars div:last-child {
+  margin-bottom: 0;
+}
+
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: initial;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  display: inline-block;
+  flex: 0 1 auto;
+  color: var(--color-4);
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.main-nav a:hover {
+  background: var(--color-1);
+  color: var(--color-4);
+}
+
+
+.main-nav {
+  display: none;
+}
+.main-nav.expand {
+  display: block;
+}
+
+.main-nav.expand a {
+  text-align: left;
+  display: block;
+  flex: 1 1 100%;
+}
+
+.footer-copyright {
+  text-align: center;
+}
+
+
+#section-hero {
+  height: 600px;
+  background: #031119 url(/images/elephants-50611-mobile.jpg) no-repeat center top;
+  background-size: cover;
+}
+
+#hero-2nd {
+  background-color: var(--color-2);
+  text-align: center;
+}
+#hero-2nd h2 {
+  color: var(--color-1);
+  color: white;
+}
+
+#section-hero-credits {
+  background: #fff;
+  font-size: .8rem;
+  text-align: right;
+  border-top: 1px solid var(--color-3);
+  border-bottom: 1px solid var(--color-3);
+}
+
+.highlights {
+  text-align: center;
+}
+.highlights header {
+  color: var(--color-3);
+}
+
+.highlights img {
+  max-width: 200px;
+}
+.gut > div {
+  padding: 0 1.5rem;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+#tsavo-logo {
+  width: 100%;
+  max-width: 220px;
+}
+#swt-logo {
+  width: 100%;
+  max-width: 180px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-3);
+}
+
+a,
+a:visited,
+a:focus {
+  color: var(--color-3);
+}
+
+#section-hero .slogan {
+  display: block;
+  background: var(--color-3);
+  color: var(--color-1);
+  margin-top: 3rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.donate-link {
+  padding: 1rem 2rem;
+  color: var(--color-4);
+  background: var(--color-2);
+  border-radius: 1rem;
+  text-decoration: none;
+}
+
+#page-sidebar {
+  /*text-align: justify;*/
+  background: var(--color-1);
+  padding-bottom: 1rem;
+}
+
+#banner {
+  background: var(--color-1);
+}
+#highlights-box {
+  background: var(--color-1);
+}
+.donate-box {
+  margin-top: 5rem;
+  border-top: 1px solid var(--color-2);
+}
+.donate-link-box {
+  padding-top: .7rem;
+  text-align: center;
+}
+.donate-logo-img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.language-container {
+  overflow: auto;
+  max-width: 85vw;
+}
+
+@media only screen and (min-width: 80em) { /* min-width 1280px, large screens */
+  #page-header {
+    position: sticky;
+  }
+  a.menu-icon {
+    display: none;
+  }
+
+  .main-nav {
+    flex-wrap: nowrap;
+  }
+  .main-nav {
+    display: block;
+  }
+
+  p {
+    line-height: 2rem;
+  }
+  #page-sidebar {
+    border-left: 2px solid var(--color-2);
+  }
+
+  #section-hero {
+    height: 500px;
+    background: #031119 url(/images/elephants-50611.jpg) no-repeat center top;
+    background-size: cover;
+  }
+
+  #section-hero .slogan {
+    margin-top: 0;
+  }
+}

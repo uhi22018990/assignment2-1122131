@@ -1,0 +1,21 @@
+<div class="page-footer-content toco-row gut">
+  <div class="toco-1">
+    <div class="toco-row">
+      <a class="toco-1" href="/">Home</a>
+    </div>
+    <div class="toco-1">
+      <div class="toco-row footer-copyright">
+        <div class="toco-auto">
+          <p>
+            Copyright &copy; Andrea Davanzo<br>
+            Bella CMS Version <?= BELLA_VERSION ?>
+          </p>
+        </div>
+        <div class="toco-auto">
+          <p>Memory usage: <?= memory_get_usage() ?> bytes<br>
+          Render time: <?= round(microtime(true) - ME, 3) ?> seconds</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

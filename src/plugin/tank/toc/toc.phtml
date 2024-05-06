@@ -1,0 +1,10 @@
+<header>
+  <h3>Table of contents</h3>
+</header>
+<nav class="docs-toc-nav" aria-label="Secondary">
+  <ul class="sidenav-list">
+    <?php foreach ($data->store['tank.toc'] ?? [] as $doc): ?>
+      <li><a href="<?= $doc->url ?>"><?= $doc->headline ?></a></li>
+    <?php endforeach; ?>
+  </ul>
+</nav>

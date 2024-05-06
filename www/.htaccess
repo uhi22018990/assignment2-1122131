@@ -1,0 +1,16 @@
+#Charset
+AddDefaultCharset UTF-8
+
+# Security: Don't allow browsing of directories
+Options -Indexes
+
+# Rewrite rules
+RewriteEngine on
+RewriteBase /
+RewriteRule ^ - [E=ENV:no-proxy]
+
+RewriteCond %{SERVER_PORT} ^80$ [NC]
+RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* bootstrap.php [L,QSA]

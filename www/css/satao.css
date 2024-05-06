@@ -1,0 +1,24 @@
+.satao-block- {
+  width: 100%;
+  padding: .5rem;
+  color: black;
+  margin: .5rem auto;
+}
+
+.satao-block-danger {
+  background-color: #ff3f00;
+}
+
+.satao-block-warning {
+  background-color: #ff7f00;
+}
+.satao-block-success {
+  /*background-color: var(--text);*/
+  background-color: darkgreen;
+  color: #ddd;
+}
+.satao-block--info {
+  background-color: #c49300;
+}
+
+

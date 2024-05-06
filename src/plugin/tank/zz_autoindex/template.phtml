@@ -1,0 +1,12 @@
+<div class="tank-autoindex-list">
+  <ul class="tank-autoindex-folder">
+    <?php foreach ($list['folders'] as $folder): ?>
+      <li><a href="<?= $folder['url'] ?>"><?= $folder['caption'] ?></a></li>
+    <?php endforeach ?>
+  </ul>
+  <ul class="tank-autoindex-folder">
+    <?php foreach ($list['files'] as $file): ?>
+      <li><a href="<?= $file['url'] ?>"><?= $file['caption'] ?></a></li>
+    <?php endforeach ?>
+  </ul>
+</div>

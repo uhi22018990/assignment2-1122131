@@ -1,0 +1,12 @@
+<section>
+  <header>
+    <h2><?= $data->path->items[$data->path->key_last]->headline ?></h2>
+  </header>
+<nav class="tank-function-sidebar" aria-label="Secondary">
+  <ul class="sidenav-list">
+    <?php foreach($data->store['tank.toc'] ?? [] as $doc): ?>
+    <li><a href="<?= $doc->url ?>"><?= $doc->headline ?></a></li>
+    <?php endforeach; ?>
+  </ul>
+</nav>
+</section>

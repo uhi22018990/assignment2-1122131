@@ -1,0 +1,198 @@
+.h1 Documentation<
+
+.p
+Satao is a document format for publishing HTML documents.
+Based and inspired by HTML, it reuses the its elements trying to reduce the syntax verbosity.<
+
+.h2 Introduction<
+.p HTML elements are delineated by tags, written using angle brackets.
+Tags can introduce content into the page or provide information about document text.
+The HTML specification has seen several updates since its first release 2 in 1995.<
+
+.pre{class=code-container}
+.code{class="language-html"}
+%enc
+<p>
+  This is a sentence inside a paragraph.
+  This is another sentence inside a paragraph.
+</p>
+
+<ul>
+  <li>this is an item</li>
+  <li>this is another item</li>
+  <li>another one
+    <ul>
+      <li>this is a text</li>
+      <li>this is another text</li>
+    </ul>
+  </li>
+</ul>
+%%
+<<
+
+.p
+From the above example there is a good dose of verbosity.
+Nothing wrong with it and there are very good reasons for this verbosity.
+However, this verbosity could be a bit annoying while writing a document or an article for the web.
+A lot of alternative markup languages has been invented trying to reduce the HTML verbosity.
+Some examples are Markup, Asciidoc or reStructuredText etc..
+However, these markup languages have their own syntax and rules.
+For example, on Markdown a heading 2 is prefixed by a double hash (##).
+Instead, a text in bold is included between two asterisks, like **bold text**.
+<
+
+.p
+Satao adopted a different approach.
+It reuses the same tags defined by HTML but shortening its syntax.
+So, our example can be rewritten in Satao as:
+
+.pre
+.code{class="language-text"}
+%esc
+.p
+  This is a sentence inside a paragraph.
+  This is another sentence inside a paragraph.&lt;
+
+.ul
+  .li this is an item&lt;
+  .li this is another item&lt;
+  .li
+    .ol
+      .li this is a text&lt;
+      .li this is another text&lt;
+<<<
+%%
+<<
+
+.p
+Moreover, Satao supports element attributes like HTML and it adopts the same HTML syntax.
+For example, this HTML code:
+
+.pre
+.code{class="language-html"}
+%enc
+<figure>
+  <img src="/images/satao.jpg" alt="The elephant Satao">
+  <figcaption>The elephant Satao</figcaption>
+</figure>
+%%
+<<
+
+.p in Satao can be written as<
+
+.pre
+.code{class="language-text"}
+%esc
+.figure&lt;
+.img{src="/images/satao.jpg" alt="The elephant Satao"}
+.figcaption The elephant Satao&lt;
+%%
+<<
+
+.p
+To simplify, you can reuse all the HTML tags to identity bold or italic or divs.
+If you don't need to specify attributes you can code you paragraph with a simple .code &period;p< followed by a whitespace,
+  and close it with the .code &lt;< (less than) symbol.<
+
+.pre
+.code{class="language-text"}.p
+%esc
+This is a sentence inside a paragraph.
+This is another sentence inside a paragraph.&lt;
+%%
+<<
+
+.h2 Macro<
+
+.p
+Satao comes with macro.
+Macro are pieces of html code that will be replaced during the encoding.
+They start with the number symbol (#) followed by the macro name.
+There are four pre-defined macros:<
+
+.ul
+  .li &num;satao-info<
+  .li &num;satao-success<
+  .li &num;satao-warning<
+  .li &num;satao-danger<
+<
+
+.p Example:
+
+.pre
+.code{class="language-text"}#satao-info
+  This is a line in a paragraph.
+  This is another line in a paragraph.
+  This is another line in a paragraph.
+&lt;
+<<
+
+.p will be converted as<
+
+.pre
+.code{class="language-html"}
+%enc
+<div class="satao-info">
+  This is a line in a paragraph.
+  This is another line in a paragraph.
+  This is another line in a paragraph.
+</div>
+%%
+<<
+
+.h2 Escape<
+.p
+With Satao a whole block can be escaped which means that it will not be processed.
+Example, for publish this:<
+
+.pre
+.code{class="language-text"}
+%esc
+.figure&lt;
+.img{src="/images/satao.jpg" alt="The elephant Satao"}&lt;
+.figcaption The elephant Satao&lt;
+%%
+<<
+
+.p all the lines must be prefixed with special tag .code &#37;esc<.<
+
+.pre
+.code{class="language-text"}
+%esc
+&#37;esc
+.figure&lt;
+.img{src="/images/satao.jpg" alt="The elephant Satao"}
+.figcaption The elephant Satao&lt;
+&#37;&#37;
+%%
+<<
+
+
+.h2 Encoding<
+.p
+Similar to Escape, Satao can encode each character on a line by its HTML entities.
+Example, for publish this:<
+
+.pre
+.code{class="language-html"}
+%enc
+<figure>
+  <img src="/images/satao.jpg" alt="The elephant Satao">
+  <figcaption>The elephant Satao</figcaption>
+</figure>
+%%
+<<
+
+.p all the lines must be prefixed with the tag .code &#37;enc<.<
+.pre
+.code{class="language-text"}
+%enc
+%enc
+<figure>
+  <img src="/images/satao.jpg" alt="The elephant Satao">
+  <figcaption>The elephant Satao</figcaption>
+</figure>
+%%
+%%
+<<
+

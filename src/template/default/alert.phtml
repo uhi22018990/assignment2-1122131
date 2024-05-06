@@ -1,0 +1,9 @@
+<div class="toco-col">
+  <div class="toco-i">
+    <?php foreach ($alerts ?? [] as $alert): ?>
+      <div class="t-alert t-alert-<?= $alert['type'] ?>" role="alert">
+        <?= $alert['message'] ?>
+      </div>
+    <?php endforeach; ?>
+  </div>
+</div>
