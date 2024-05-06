@@ -20,4 +20,3 @@ require SESTO_DIR . '/app/run.php';
 
 $error = '';
 sesto_app_run($sys_dir, 'bella_engine', [], '', false, $error);
-print_r($error);
