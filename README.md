@@ -77,7 +77,10 @@ In the old age of MS-DOS, Unix, or even of the web, users where able to organise
 Bella CMS use the same concept
 
 
-![](filesystem_layout.png)
+![](filesystem_layout2.png)
+
+
+
 
 
 ## The satao.page website
